@@ -3,15 +3,15 @@
   "displayName": "kya cheda Sound",
   "description": "Play Kya cheda bsdk when tests fail or errors appear.",
   "version": "0.0.3",
-  "publisher": "Utkarsh",
+  "publisher": "utkarshrajmishra",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Utkarshrajmishra"
+    "url": "https://github.com/Utkarshrajmishra/kya-cheda-bsdk-extension"
   },
-  "homepage": "https://github.com/morshedulmunna/faaaa_sound#readme",
+  "homepage": "https://github.com/Utkarshrajmishra/kya-cheda-bsdk-extension#readme",
   "bugs": {
-    "url": "https://github.com/morshedulmunna/faaaa_sound/issues"
+    "url": "https://github.com/Utkarshrajmishra/kya-cheda-bsdk-extension/issues"
   },
   "keywords": [
     "sound",
@@ -28,6 +28,7 @@
     "Other",
     "Testing"
   ],
+  "icon": "logo.ico",
   "activationEvents": [
     "onStartupFinished"
   ],
