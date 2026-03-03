@@ -1,93 +1,64 @@
-# Faaaa Sound
+# 🔊 Kya Cheda Sound
 
-A VS Code extension that plays your `faaah.mp3` sound when tests fail.
+**"Kya cheda bsdk!"** — The only motivation you'll ever need.
 
-By default, it triggers on **failed test cases only**.
-You can optionally enable sound on editor errors.
+Tired of silently failing? This extension ensures that every time you make a coding mistake or a terminal command fails, you hear about it. Literally.
 
-## What It Does
+---
 
-- Plays `faaah.mp3` when a test command fails.
-- Supports test failure detection from:
-  - Task failures
-  - Integrated terminal commands (for example `npm test`, `npm run test`, `jest`, `vitest`)
-- Optional mode to read the latest error message before the final sound.
-- Falls back to speech (`Faaaaaaah`) if file playback is unavailable.
+## ✨ Features
 
-## Default Behavior
+- **Editor Errors**: Plays sound the moment a new red squiggly line (Error Diagnostic) appears in your code.
+- **Terminal Failures**: Detects when a terminal command exits with an error (non-zero exit code) using VS Code Shell Integration.
+- **Background Playback**: On Windows, it uses native PowerShell APIs to play sounds silently without opening external media players.
+- **Fallback Speech**: If the audio file is missing or broken, it uses Text-to-Speech (TTS) to keep the insults coming.
+- **Cooldown Logic**: Smart cooldown prevents the sound from spamming while you are typing rapidly.
 
-- `faaaaSound.onTestFailure`: `true`
-- `faaaaSound.onErrors`: `false`
+---
 
-So out of the box, sound plays on test failure, not on general code errors.
+## 🚀 Installation
 
-## Extension Settings
+1. Open **VS Code**.
+2. Go to the **Extensions** view (`Ctrl+Shift+X`).
+3. Search for **Kya Cheda Sound**.
+4. Click **Install**.
 
-- `faaaaSound.enabled`: Enable/disable the extension.
-- `faaaaSound.onTestFailure`: Trigger on failed tests.
-- `faaaaSound.onErrors`: Trigger on new diagnostics with error severity.
-- `faaaaSound.readErrorMessage`: Read latest error text before playing sound.
-- `faaaaSound.soundFilePath`: Audio file path. Supports `${extensionPath}` and `${workspaceFolder}`.
-- `faaaaSound.cooldownMs`: Minimum time between triggers (milliseconds).
-- `faaaaSound.customPhrase`: Fallback speech phrase if audio file playback fails.
+> **Note**: For terminal sounds to work, ensure **Shell Integration** is enabled in your VS Code settings. You should see a small dot (blue/red) next to your terminal commands.
 
-## Commands
+---
 
-- `Faaaa Sound: Play Now` (`faaaaSound.playNow`)
-- `Faaaa Sound: Self Test` (`faaaaSound.selfTest`)
-- `Faaaa Sound: Show Logs` (`faaaaSound.showLogs`)
+## ⚙️ Configuration
 
-## Local Development
+Customize the behavior in `Settings > Extensions > Kya cheda bsdk Sound`:
 
-1. Install dependencies:
-```bash
-npm install
-```
+| Setting | Default | Description |
+| :--- | :--- | :--- |
+| `onErrors` | `true` | Enable sound when code errors appear in the editor. |
+| `onTerminalError` | `true` | Enable sound when a terminal command fails. |
+| `cooldownMs` | `2500` | Minimum delay (ms) between sounds. |
+| `soundFilePath` | `${extensionPath}/audio.wav` | Path to a custom `.wav` file if you want to swap the voice. |
 
-2. Compile:
-```bash
-npm run compile
-```
+---
 
-3. Run extension in dev host:
-- Press `F5` in VS Code.
+## 🛠️ Commands
 
-4. Test behavior:
-- Run `Faaaa Sound: Self Test` from Command Palette.
-- Run a failing test command in integrated terminal, for example:
-```bash
-npm run test
-```
+Open the Command Palette (`Ctrl+Shift+P`) and search for:
 
-## Package and Install
+- `Kya cheda bsdk Sound: Play Now` - Test the sound immediately.
 
-```bash
-npm run compile
-npx vsce package
-code --install-extension faaaa-sound-<version>.vsix --force
-```
+---
 
-Reload VS Code after install.
+## 📝 Requirements
 
-## Publish to Marketplace
+- **Windows**: No extra software needed (uses PowerShell).
+- **macOS**: No extra software needed (uses `afplay`).
+- **Linux**: Requires `ffplay` (from FFmpeg) or `aplay` installed.
 
-If a version already exists, bump version first:
+---
 
-```bash
-npx vsce publish patch
-```
+## 🤝 Contributing
 
-Or:
+Found a bug or want to add more features? Feel free to check out the [GitHub Repository](https://github.com/Utkarshrajmishra).
 
-```bash
-npm version patch
-npx vsce publish
-```
-
-## Platform Notes
-
-- macOS: uses `afplay` for file playback.
-- Linux: tries `ffplay`, then `mpg123`.
-- Windows: uses PowerShell media playback.
-- If audio playback fails, speech fallback is used.
-- Terminal command detection depends on VS Code shell integration.
+---
+**Enjoying the motivation? Leave a ⭐ on the Marketplace!**
