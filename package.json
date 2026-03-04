@@ -28,7 +28,7 @@
     "Other",
     "Testing"
   ],
-  "icon": "logo.ico",
+  "icon": "logo.png",
   "activationEvents": [
     "onStartupFinished"
   ],
@@ -40,7 +40,8 @@
     "CHANGELOG.md",
     "LICENSE",
     "package.json",
-    "audio.wav"
+    "audio.wav",
+    "logo.png"
   ],
   "contributes": {
     "commands": [
